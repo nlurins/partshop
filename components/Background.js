@@ -6,7 +6,7 @@ export const Background = () => {
    
   
     return (
-    <div className="w-[100%] h-[100vh] fixed transform scale-130 ">
+    <div className="w-[100%] h-[100vh] fixed transform scale-110 ">
         
         <video src='/video.webm' className="w-[100%] h-[100%] object-cover " autoPlay loop muted playsInline />
         

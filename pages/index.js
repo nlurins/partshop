@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         
         <Background />
-        <div className='w-[100%] h-[100vh] fixed backdrop-filter backdrop-blur-lg'>
+        <div className='w-[100%] h-[100vh] fixed backdrop-filter backdrop-blur'>
           <Header />
 
           <div className='flex flex-col max-w-[90%] mx-auto text-white pt-[10%]'>

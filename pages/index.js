@@ -20,7 +20,7 @@ export default function Home() {
 
           <div className='flex flex-col max-w-[90%] mx-auto text-white pt-[10%]'>
             <h1 className='text-white font-bold text-6xl max-w-[40%]'>Every car part you might ever need right at your finger tips.</h1>
-            <Link href="/shop"><button size="large" className='max-w-[15%] h-16 mt-24 text-center font-bold text-2xl  bg-white text-black border shadow-inner'>SHOP NOW!</button></Link>
+            <Link href="/shop"><button size="large" className='transition-transform  hover:scale-110 max-w-[15%] h-16 mt-24 text-center font-bold text-2xl  bg-white text-black border shadow-inner'>SHOP NOW!</button></Link>
           </div>
         </div>
         

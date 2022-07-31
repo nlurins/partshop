@@ -7,7 +7,7 @@ const Shop = () => {
   
   
     return (
-    <div className="bg-[#070707e1] min-h-screen">
+    <div className=" bg-gradient-to-r  from-[#070707f3] to-[#070707e1] min-h-screen">
         <Header />
         <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat']">
             <ShopSideBar className="sticky" />

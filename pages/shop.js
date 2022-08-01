@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Shop = () => {
-    const [mainActive, setMainActive] = useState('');
+    const [mainActive, setMainActive] = useState('All Products');
     const products = [
         {
             id: 0,

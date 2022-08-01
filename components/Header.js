@@ -9,7 +9,8 @@ export const Header = ({cart, handleMinus, handlePlus}) => {
   const [active, setActive] = useState('hidden');
 
   
-
+  const checkLength = cart.filter(item => item.quantity > 0)
+  
  
   
   return (
@@ -37,6 +38,10 @@ export const Header = ({cart, handleMinus, handlePlus}) => {
           <div className="flex font-['Montserrat']  text-3xl text-white gap-20">
               <Link href="/shop"><a className='hover:text-blue-gray-200'>Shop</a></Link>
               <a className='hover:text-blue-gray-200'>Contacts</a>
+              {checkLength.length > 0 && 
+                <div className='text-xl bg-white border rounded-md text-black font-bold w-8 h-8 text-center self-center mr-[-75px]'>
+                  {checkLength.length}
+                </div>}
               <BsCart3 className='h-[40px] hover:text-blue-gray-200 cursor-pointer' onClick={() => {
                 setActive('')
               }}/>

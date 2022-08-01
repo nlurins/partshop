@@ -13,6 +13,7 @@ export const ShopSideBar = ({categories, onClick}) => {
             })}
             
         </ul>
+        
     </div>
   )
 }

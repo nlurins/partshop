@@ -33,9 +33,9 @@ export const Header = ({cart, handleMinus, handlePlus}) => {
           </div>
           </div>
        </div>
-      <div className="container flex flex-col md:flex-row gap-16 md:gap-0 md:max-w-[90%] md:pt-28 mx-auto justify-between items-center md:items-start ">
+      <div className="container flex flex-col md:flex-row gap-16 md:gap-0 max-w-[90%] md:pt-28 mx-auto justify-between items-center md:items-start">
           <Link href="/"><a className="font-['Montserrat'] tracking-wider text-4xl text-white font-bold hover:text-blue-gray-200 text-center lg:text-start">CAR PARTS AND SERVICES</a></Link>
-          <div className="flex font-['Montserrat']  text-3xl text-white gap-20">
+          <div className="flex font-['Montserrat']  text-3xl text-white gap-10 md:gap-20">
               <Link href="/shop"><a className='hover:text-blue-gray-200'>Shop</a></Link>
               <a className='hover:text-blue-gray-200'>Contacts</a>
               {checkLength.length > 0 && 

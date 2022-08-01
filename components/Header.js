@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <div className>
+    <div>
       <div className="container flex max-w-[90%] pt-28 mx-auto justify-between">
           <Link href="/"><a className="font-['Montserrat'] tracking-wider text-4xl text-white font-bold">CAR PARTS AND SERVICES</a></Link>
           <div className="flex font-['Montserrat']  text-3xl text-white gap-20">

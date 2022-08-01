@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Shop = () => {
+    const [cart, setCart] = useState([]);
+    
+    
     const [mainActive, setMainActive] = useState('All Products');
     const products = [
         {
@@ -39,23 +42,29 @@ const Shop = () => {
 
     const handleActive = (e) => {
         setMainActive(e.target.innerHTML)
-        console.log(mainActive)
     }
 
+    const addToCart = (e) => {
+        const addedItem = products.filter(product => {
+            return product.title === e.target.id;
+        })
+        setCart([...cart, addedItem[0]])
+        
+    }
 
     return (
     <div className=" bg-gradient-to-r  from-[#070707f3] to-[#070707e1] min-h-screen">
-        <Header />
+        <Header cart={cart}/>
         <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat']">
             <ShopSideBar categories = {categories} onClick={(e) => {handleActive(e)}}/>
             <div className="container grid grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">
                 {products.map(product => {
                    if(mainActive === 'All Products'){
-                    return <ProductCard key={product.id} title={product.title} price={product.price}/>;
+                    return <ProductCard key={product.id} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
                    }
                    else{
                     if(product.category === mainActive) {
-                        return <ProductCard key={product.id} title={product.title} price={product.price}/>;
+                        return <ProductCard key={product.id} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
                     }
                    }
                 })}

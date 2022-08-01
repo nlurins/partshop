@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Background } from '../components/Background'
 import { Header } from '../components/Header'
 import Link from 'next/link'
+import { HeaderLand } from '../components/HeaderLand'
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         
         <Background />
         <div className='w-[100%] h-[100vh] fixed backdrop-filter backdrop-blur'>
-          <Header />
+          <HeaderLand />
 
           <div className='flex flex-col max-w-[90%] mx-auto text-white pt-[10%]'>
             <h1 className='text-white font-bold text-6xl max-w-[40%]'>Every car part you might ever need right at your finger tips.</h1>

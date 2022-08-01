@@ -3,21 +3,26 @@ import "@fontsource/montserrat";
 import Link from 'next/link';
 import {AiOutlineCloseSquare} from 'react-icons/ai';
 import { useState } from 'react';
-
-export const Header = () => {
+import { CartItem } from './CartItem';
+export const Header = ({cart}) => {
   const [active, setActive] = useState('hidden');
   
   return (
     <div>
-       <div className= {`${active} font-["Montserrat"] text-6xl text-black font-bold  `}>
+       <div className= {`${active} font-["Montserrat"] text-6xl text-black font-bold `}>
          <div className='fixed min-h-[100vh] min-w-[100%] bg-black opacity-40'>
           </div>
           <div className='fixed min-h-[100vh] w-[30%] bg-white right-0 border shadow-xl'>
           <div className='container flex flex-col w-[90%] mx-auto pt-[5%]'>
-            <AiOutlineCloseSquare className='self-end mb-10 cursor-pointer' onClick={() => {
+            <AiOutlineCloseSquare className='self-end mb-10 cursor-pointer hover:text-blue-gray-200' onClick={() => {
               setActive('hidden')
             }}/>
             <h1 className='underline text-center'>Shopping Cart</h1>
+            <ul>
+              {cart.map(item => {
+                return <CartItem title={item.title} price={item.price}/>
+              })}
+            </ul>
           </div>
           </div>
        </div>

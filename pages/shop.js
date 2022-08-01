@@ -48,7 +48,7 @@ const Shop = () => {
         <Header />
         <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat']">
             <ShopSideBar categories = {categories} onClick={(e) => {handleActive(e)}}/>
-            <div className="container grid grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16">
+            <div className="container grid grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">
                 {products.map(product => {
                    if(mainActive === 'All Products'){
                     return <ProductCard key={product.id} title={product.title} price={product.price}/>;

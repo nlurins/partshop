@@ -16,7 +16,7 @@ const Shop = () => {
             title: 'Michelin tires',
             category: 'Tires',
             categoryId: 0,
-            price: 299.9,
+            price: 299.99,
             inStock: true,
             picture: ''
         },
@@ -25,8 +25,17 @@ const Shop = () => {
             title: 'Some oil',
             category: 'Oils',
             categoryId: 1,
-            price: 39.9,
+            price: 39.99,
             inStock: true,
+            picture: ''
+        },
+        {
+            id: 3,
+            title: 'Some part',
+            category: 'Parts',
+            categoryId: 2,
+            price: 89.99,
+            inStock: false,
             picture: ''
         }
     ]
@@ -55,16 +64,16 @@ const Shop = () => {
     return (
     <div className=" bg-gradient-to-r  from-[#070707f3] to-[#070707e1] min-h-screen">
         <Header cart={cart}/>
-        <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat']">
+        <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat'] z-10">
             <ShopSideBar categories = {categories} onClick={(e) => {handleActive(e)}}/>
             <div className="container grid grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">
                 {products.map(product => {
                    if(mainActive === 'All Products'){
-                    return <ProductCard key={product.id} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
+                    return <ProductCard key={product.id} inStock={product.inStock} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
                    }
                    else{
                     if(product.category === mainActive) {
-                        return <ProductCard key={product.id} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
+                        return <ProductCard key={product.id} inStock={product.inStock} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
                     }
                    }
                 })}

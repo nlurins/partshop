@@ -81,13 +81,33 @@ const Shop = () => {
         }
         
     }
-    const handlePlus = (e) => {
+    const handlePlus = (title) => {
         let newCart = [...cart]
+        console.log([newCart])
+        console.log(title)
+        newCart.forEach(item => {
+            if(item.title === title){
+                item.quantity++
+            }
+        })
+        setCart([...newCart])
+    }
+
+    const handleMinus = (title) => {
+        let newCart = [...cart]
+        console.log([newCart])
+        console.log(title)
+        newCart.forEach(item => {
+            if(item.title === title){
+                item.quantity--
+            }
+        })
+        setCart([...newCart])
     }
 
     return (
     <div className=" bg-gradient-to-r  from-[#070707f3] to-[#070707e1] min-h-screen">
-        <Header cart={cart}/>
+        <Header cart={cart} handleMinus={handleMinus} handlePlus={handlePlus}/>
         <div className="mt-[5%] container mx-auto max-w-[90%] flex font-['Montserrat'] z-10">
             <ShopSideBar categories = {categories} onClick={(e) => {handleActive(e)}}/>
             <div className="container grid grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">

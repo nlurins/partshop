@@ -1,7 +1,7 @@
 import "@fontsource/montserrat";
-import {AiOutlinePlus} from 'react-icons/ai'
+import {AiOutlinePlaySquare, AiOutlinePlus} from 'react-icons/ai'
 import {AiOutlineMinus} from 'react-icons/ai'
-export const CartItem = ({title, price, quantity}) => {
+export const CartItem = ({title, price, quantity, onMinusClick, onPlusClick}) => {
 
 
     
@@ -16,17 +16,10 @@ export const CartItem = ({title, price, quantity}) => {
                         <h2>${price * quantity}</h2>
                     </div>
                     <div className="flex align-center justify-center gap-4 mt-6 text-4xl font-bold">
-                        <AiOutlinePlus className="cursor-pointer" onClick={() => {
-                            
-                            quantity++
-                            
-                        }}/>
+                        <AiOutlinePlus className="cursor-pointer" onClick={onPlusClick
+                        }/>
                         {quantity}
-                        <AiOutlineMinus className="cursor-pointer" onClick={() => {
-                            
-                            quantity--
-                            
-                        }} />
+                        <AiOutlineMinus className="cursor-pointer" onClick={onMinusClick} />
                     </div>
                 </div>
             </li>

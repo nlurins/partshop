@@ -18,7 +18,7 @@ export const Header = ({cart, handleMinus, handlePlus}) => {
        <div className= {`${active} font-["Montserrat"] text-6xl text-black font-bold z-50`}>
          <div className='fixed min-h-[100vh] min-w-[100%] bg-black opacity-40 z-20'>
           </div>
-          <div className='fixed h-[100vh] top-0 bottom-0 overflow-y-scroll w-[100%] lg:w-[30%] bg-white right-0 border shadow-xl z-50'>
+          <div className='fixed h-[100vh] top-0 bottom-0 overflow-y-scroll w-[100%] xl:w-[30%] lg:w-[50%] bg-white right-0 border shadow-xl z-50'>
           <div className='container flex flex-col w-[90%] mx-auto pt-[5%]'>
             <AiOutlineCloseSquare className='self-end mb-10 cursor-pointer hover:text-blue-gray-200' onClick={() => {
               setActive('hidden')

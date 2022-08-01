@@ -10,12 +10,13 @@ const Shop = () => {
     
     
     const [mainActive, setMainActive] = useState('All Products');
-    const products = [
+    const [products,setProducts] = useState([
         {
             id: 0,
             title: 'Michelin tires',
             category: 'Tires',
             categoryId: 0,
+            quantity: 1,
             price: 299.99,
             inStock: true,
             picture: ''
@@ -25,6 +26,7 @@ const Shop = () => {
             title: 'Some oil',
             category: 'Oils',
             categoryId: 1,
+            quantity: 1,
             price: 39.99,
             inStock: true,
             picture: ''
@@ -34,11 +36,12 @@ const Shop = () => {
             title: 'Some part',
             category: 'Parts',
             categoryId: 2,
+            quantity: 1,
             price: 89.99,
             inStock: false,
             picture: ''
         }
-    ]
+    ])
     let [categories, setCategories] = useState([]);
     
     useEffect(() => {
@@ -54,11 +57,32 @@ const Shop = () => {
     }
 
     const addToCart = (e) => {
-        const addedItem = products.filter(product => {
+        let addedItem = products.filter(product => {
+            
             return product.title === e.target.id;
         })
-        setCart([...cart, addedItem[0]])
         
+        if(!cart.includes(addedItem[0])){
+            
+            setCart([...cart, addedItem[0]])
+        
+            
+        }
+        else {
+            if(cart.length > 0){
+            let newCart = [...cart]
+            newCart.forEach(item => {
+                if(item.id === addedItem[0].id){
+                    item.quantity++
+                }
+            })
+            setCart([...newCart]);}
+            console.log(cart);
+        }
+        
+    }
+    const handlePlus = (e) => {
+        let newCart = [...cart]
     }
 
     return (

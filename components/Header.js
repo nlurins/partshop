@@ -4,8 +4,13 @@ import Link from 'next/link';
 import {AiOutlineCloseSquare} from 'react-icons/ai';
 import { useState } from 'react';
 import { CartItem } from './CartItem';
+
 export const Header = ({cart}) => {
   const [active, setActive] = useState('hidden');
+
+  
+
+ 
   
   return (
     <div>
@@ -20,7 +25,7 @@ export const Header = ({cart}) => {
             <h1 className='underline text-center'>Shopping Cart</h1>
             <ul>
               {cart.map(item => {
-                return <CartItem title={item.title} price={item.price}/>
+                return <CartItem key={item.title} title={item.title} price={item.price} quantity={item.quantity}/>
               })}
             </ul>
           </div>

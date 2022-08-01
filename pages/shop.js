@@ -110,7 +110,7 @@ const Shop = () => {
         <Header cart={cart} handleMinus={handleMinus} handlePlus={handlePlus}/>
         <div className="mt-[5%] container mx-auto lg:max-w-[90%] flex flex-col lg:flex-row font-['Montserrat'] z-10">
             <ShopSideBar categories = {categories} onClick={(e) => {handleActive(e)}}/>
-            <div className="container grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">
+            <div className="container grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 min-h-screen rounded-2xl bg-white mx-auto gap-8 py-16 mr-0 px-16 border shadow-2xl">
                 {products.map(product => {
                    if(mainActive === 'All Products'){
                     return <ProductCard key={product.id} inStock={product.inStock} title={product.title} price={product.price} click = {(e) => addToCart(e)}/>;
